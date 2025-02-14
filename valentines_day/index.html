@@ -15,11 +15,11 @@
   <!-- Photo Gallery Section -->
   <div class="gallery">
     <div class="photo-container">
-      <img src="{{ url_for('static', filename='IMG_1458.jpg') }}">
-      <img src="{{ url_for('static', filename='IMG_2074.jpg') }}">
-      <img src="{{ url_for('static', filename='IMG_0443.jpg') }}">
-      <img src="{{ url_for('static', filename='IMG_8807.jpg') }}">
-      <img src="{{ url_for('static', filename='IMG_5757.jpg') }}">
+      <img src="{{ url_for( filename='IMG_1458.jpg') }}">
+      <img src="{{ url_for( filename='IMG_2074.jpg') }}">
+      <img src="{{ url_for( filename='IMG_0443.jpg') }}">
+      <img src="{{ url_for( filename='IMG_8807.jpg') }}">
+      <img src="{{ url_for( filename='IMG_5757.jpg') }}">
     </div>
   </div>
 
@@ -35,7 +35,7 @@
       <button class="reveal-btn" onclick="document.getElementById('hidden-letter').style.display='block'; this.style.display='none'; document.getElementById('hidden-photo').style.display='none';">
         Open Me! 💖
       </button>
-      <img id="hidden-photo" src="{{ url_for('static', filename='surprise.jpg') }}" class="small-photo" alt="Cute Photo">
+      <img id="hidden-photo" src="{{ url_for( filename='surprise.jpg') }}" class="small-photo" alt="Cute Photo">
     </div>
 
     <!-- Hidden Letter -->
