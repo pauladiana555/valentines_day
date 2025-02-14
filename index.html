@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine's Day! 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <div class="heart">❤️</div>
+  <h1>Happy Valentine's Day! 💕</h1>
+
+  <!-- Photo Gallery Section -->
+  <div class="gallery">
+    <div class="photo-container">
+      <img src="{{ url_for('static', filename='IMG_1458.jpg') }}">
+      <img src="{{ url_for('static', filename='IMG_2074.jpg') }}">
+      <img src="{{ url_for('static', filename='IMG_0443.jpg') }}">
+      <img src="{{ url_for('static', filename='IMG_8807.jpg') }}">
+      <img src="{{ url_for('static', filename='IMG_5757.jpg') }}">
+    </div>
+  </div>
+
+  <!-- Button to Reveal Letter -->
+  <form action="/show_letter" method="get">
+    <button type="submit">💌 Open Me guapo 💌</button>
+  </form>
+
+  {% if show_letter %}
+  <!-- Mini Letter Section (Appears After Clicking) -->
+  <div class="letter">
+    <div class="button-container">
+      <button class="reveal-btn" onclick="document.getElementById('hidden-letter').style.display='block'; this.style.display='none'; document.getElementById('hidden-photo').style.display='none';">
+        Open Me! 💖
+      </button>
+      <img id="hidden-photo" src="{{ url_for('static', filename='surprise.jpg') }}" class="small-photo" alt="Cute Photo">
+    </div>
+
+    <!-- Hidden Letter -->
+    <div id="hidden-letter" class="hidden-text">
+      <p>
+        Gracias por estar en mi vida y por hacerme feliz. Cada día a tu lado es mejor, reirme contigo me da paz y felicidad. Tengo tantas ganas de dormir encima de tu pecho como niña pequeña, ver pelis mientras comemos nuestras palomitas dulces saladas y tomamos Rio. 💖 Sabes que te quiero todos los días, no solo hoy jajaja. Pero ya que soy medio informática quería aprovecharlo para decirte lo mucho que te quiero y aprecio. Gracias por ser mi lugar seguro.
+      </p>
+      <p>Te amo,</p>
+      <div class="signature">
+        Paula💕
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Footer outside the conditional block -->
+  <footer>Made with 💕 by Paula</footer>
+
+</body>
+</html>
